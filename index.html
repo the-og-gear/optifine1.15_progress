@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+  <header>
+    <title>optifine 1.15 progress</title>
+  </header>
+
+  <style>
+    @font-face {
+      font-family: mc;
+      src: url('https://qwerty-bisborb.github.io/Minecraftia-Regular.ttf');
+      /* Q: why this random site? */
+      /* A: i host it, so it disappearing would be something i would know of */
+    }
+
+    p {
+      font-family: mc;
+      line-height: 1.1;
+    }
+    
+    body  {
+  background-image: url("https://cdn.discordapp.com/attachments/549011571951665185/660357457452728341/bedrock.png");
+}
+
+  </style>
+
+  <script>
+    // TYSM, alejandro camba for the finding between two strings in one string
+    // https://stackoverflow.com/a/56028341
+
+    // TYSM for setting var to txt file from url, vic
+    // https://stackoverflow.com/a/49680132
+
+    fetch('https://www.reddit.com/r/Optifine/comments/d8nptg/optifine_115_progress_report.json')
+      .then(response => response.text())
+      .then((data) => {
+
+        var x = " OptiFine 1.15.1 is ";
+        var y = "% done.\\";
+        var str = data;
+        var rawresult = (str.substring(str.indexOf(x) + x.length, str.lastIndexOf(y)));
+        var result = (str.substring(str.indexOf(x) + x.length, str.lastIndexOf(y))) + "% completed.";
+        document.getElementById("percentage").innerHTML = result;
+      })
+
+  </script>
+
+  <center>
+  
+  <h1><br></h1> <!-- i know, this is jank -->
+
+      <p style="font-size: 32px; color: white;">The Optifine Mod for Minecraft 1.15.1 is</p>
+
+      <p id="percentage" style="font-size: 64px; color: white;">loading...</p>
+
+      <p style="font-size: 24px; color: white;">this absolutely useless tool was made by <a href="http://landonwang.github.io" style="color: white;"><i>landonwang</i></a></p>
+
+      <a href="https://www.reddit.com/r/Optifine/comments/d8nptg/optifine_115_progress_report/">
+        <p style="font-size: 16px; color: white;">sauce</p>
+      </a>
+      
+  </center>
+
+</html>
