@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-
-  <header>
+<html><head></head><body><header>
     <title>optifine 1.15 progress</title>
   </header>
 
@@ -10,8 +6,6 @@
     @font-face {
       font-family: mc;
       src: url('https://qwerty-bisborb.github.io/Minecraftia-Regular.ttf');
-      /* Q: why this random site? */
-      /* A: i host it, so it disappearing would be something i would know of */
     }
 
     p {
@@ -20,7 +14,7 @@
     }
     
     body  {
-  background-image: url("https://cdn.discordapp.com/attachments/549011571951665185/660357457452728341/bedrock.png");
+  background-image: url("https://cdn.discordapp.com/attachments/549011571951665185/677494157723566080/dort.png");
 }
 
   </style>
@@ -36,7 +30,7 @@
       .then(response => response.text())
       .then((data) => {
 
-        var x = " OptiFine 1.15.1 is ";
+        var x = " OptiFine 1.15.2 is ";
         var y = "% done.\\";
         var str = data;
         var rawresult = (str.substring(str.indexOf(x) + x.length, str.lastIndexOf(y)));
@@ -50,16 +44,17 @@
   
   <h1><br></h1> <!-- i know, this is jank -->
 
-      <p style="font-size: 32px; color: white;">The Optifine Mod for Minecraft 1.15.1 is</p>
+      <p style="font-size: 32px; color: white;">The Optifine Mod for Minecraft 1.15.2 is</p>
 
       <p id="percentage" style="font-size: 64px; color: white;">loading...</p>
 
-      <p style="font-size: 24px; color: white;">this absolutely useless tool was made by <a href="http://landonwang.github.io" style="color: white;"><i>landonwang</i></a></p>
+      <p style="font-size: 24px; color: white;">made by <a href="http://landonwang.github.io" style="color: white;"><i>landonwang</i></a></p>
 
       <a href="https://www.reddit.com/r/Optifine/comments/d8nptg/optifine_115_progress_report/">
-        <p style="font-size: 16px; color: white;">sauce</p>
+        <p style="font-size: 16px; color: white;">official reddit post</p>
       </a>
       
   </center>
 
-</html>
+
+</body></html>
