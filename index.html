@@ -1,60 +1,75 @@
 <html><head></head><body><header>
-    <title>optifine 1.15 progress</title>
-  </header>
+	<title>optifine 1.15 progress</title>
+	</header>
 
-  <style>
-    @font-face {
-      font-family: mc;
-      src: url('https://qwerty-bisborb.github.io/Minecraftia-Regular.ttf');
-    }
+	<style>
+	@font-face {
+		font-family: mc;
+		src: url('https://qwerty-bisborb.github.io/Minecraftia-Regular.ttf');
+	}
 
-    p {
-      font-family: mc;
-      line-height: 1.1;
-    }
-    
-    body  {
-  background-image: url("https://cdn.discordapp.com/attachments/549011571951665185/677494157723566080/dort.png");
-}
+	p {
+		font-family: mc;
+		line-height: 1.1;
+	}
+	
+	body {
+		background-image: url("https://cdn.discordapp.com/attachments/549011571951665185/677494157723566080/dort.png");
+	}
 
-  </style>
+	.centered {
+		margin-top: 5%;
+	}
 
-  <script>
-    // TYSM, alejandro camba for the finding between two strings in one string
-    // https://stackoverflow.com/a/56028341
+	.hidden {
+		display: none;
+	}
 
-    // TYSM for setting var to txt file from url, vic
-    // https://stackoverflow.com/a/49680132
+	.reddit {
+		width: 25px;
+		height: 25px;
+	}
 
-    fetch('https://www.reddit.com/r/Optifine/comments/f8l8lm/optifine_115_progress_report.json')
-      .then(response => response.text())
-      .then((data) => {
+	.git {
+		width: 50px;
+		height: 50px;
+	}
+	</style>
 
-        var x = " OptiFine 1.15.2 is ";
-        var y = "% done.\\";
-        var str = data;
-        var rawresult = (str.substring(str.indexOf(x) + x.length, str.lastIndexOf(y)));
-        var result = (str.substring(str.indexOf(x) + x.length, str.lastIndexOf(y))) + "% completed.";
-        document.getElementById("percentage").innerHTML = result;
-      })
+	<script>
+	// TYSM, alejandro camba for the finding between two strings in one string
+	// https://stackoverflow.com/a/56028341
 
-  </script>
+	// TYSM for setting var to txt file from url, vic
+	// https://stackoverflow.com/a/49680132
 
-  <center>
-  
-  <h1><br></h1> <!-- i know, this is jank -->
+	fetch('https://www.reddit.com/r/Optifine/comments/f8l8lm/optifine_115_progress_report.json')
+	  .then(response => response.text())
+	  .then((data) => {
 
-      <p style="font-size: 32px; color: white;">The Optifine Mod for Minecraft 1.15.2 is</p>
+		var x = " OptiFine 1.15.2 is ";
+		var y = "% done.\\";
+		var str = data;
+		var rawresult = (str.substring(str.indexOf(x) + x.length, str.lastIndexOf(y)));
+		var result = (str.substring(str.indexOf(x) + x.length, str.lastIndexOf(y))) + "% completed.";
+		document.getElementById("percentage").innerHTML = result;
+	  });
+	</script>
 
-      <p id="percentage" style="font-size: 64px; color: white;">loading...</p>
+	<center>
+		<h1 class="hidden">Optifine Completion</h1> <!-- SEO hits -->
+		<div class="centered">
+			<p style="font-size: 32px; color: white;">The Optifine Mod for Minecraft 1.15.2 is</p>
 
-      <p style="font-size: 24px; color: white;">made by <a href="http://landonwang.github.io" style="color: white;"><i>landonwang</i></a></p>
+			<p id="percentage" style="font-size: 64px; color: white;">Loading percentage...</p>
 
-      <a href="https://www.reddit.com/r/Optifine/comments/f8l8lm/optifine_115_progress_report/">
-        <p style="font-size: 16px; color: white;">official reddit post</p>
-      </a>
-      
-  </center>
+			<p style="font-size: 24px; color: white;">Made by <a href="http://landonwang.github.io" style="color: white;"><img class="git" src="./GitHub-Mark-120px-plus.png"></img> <i>landonwang</i></a></p>
+
+			<a href="https://www.reddit.com/r/Optifine/comments/f8l8lm/optifine_115_progress_report/">
+				<p style="font-size: 16px; color: white;"><img class="reddit" src="./reddit_share_circle_128.png"></img> Official Reddit post</p>
+			</a>
+		</div>
+	</center>
 
 
 </body></html>
